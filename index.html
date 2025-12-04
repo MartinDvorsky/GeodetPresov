@@ -53,14 +53,16 @@
         .hero-bg-image {
             position: absolute;
             inset: 0;
-            /* Abstraktná technologická sieť / mapa */
-            background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1920&auto=format&fit=crop');
+            /* Konkrétna fotka: Totálna stanica v teréne (Scott Blake - Unsplash) */
+            background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            opacity: 0.4; /* Tmavšie, aby vynikol text */
-            /* Jemná animácia priblíženia */
+            /* Jemná opacita, aby vynikol biely text */
+
             animation: slowZoom 20s infinite alternate;
         }
+
+
 
         @keyframes slowZoom {
             from { transform: scale(1); }

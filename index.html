@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geodet Peter Petrík | Prešov & Vranov n/T</title>
+    <meta name="description" content="Profesionálne geodetické služby v Prešovskom kraji. Geometrické plány, vytyčovanie stavieb a inžinierska geodézia.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0d9488', // Teal 600
+                        primaryDark: '#0f766e', // Teal 700
+                        accent: '#2dd4bf', // Teal 400 (svietivá pre tmavé pozadie)
+                        dark: '#0f172a', // Slate 900
+                        light: '#f8fafc', // Slate 50
+                    },
+                    backgroundImage: {
+                        'tech-pattern': "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Nový Hero štýl - Digitálny Terén */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            inset: 0;
+            /* Abstraktná technologická sieť / mapa */
+            background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4; /* Tmavšie, aby vynikol text */
+            /* Jemná animácia priblíženia */
+            animation: slowZoom 20s infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        /* Gradient Overlay pre čitateľnosť textu */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgb(15,23,42);
+            background: linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(15,23,42,0.95) 35%, rgba(15,23,42,0.4) 100%);
+        }
+
+        /* Glow efekt pre tlačidlá */
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(45, 212, 191, 0.6);
+        }
+    </style>
+</head>
+<body class="text-slate-600 antialiased selection:bg-accent selection:text-dark">
+
+<!-- Navigácia -->
+<nav class="fixed w-full z-50 transition-all duration-300 bg-dark/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <!-- Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-heading font-bold text-2xl text-white tracking-tight">GEODET<span class="text-accent">PREŠOV</span></span>
+                <span class="text-xs tracking-[0.2em] text-slate-400 uppercase group-hover:text-accent transition">Peter Petrík</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#sluzby" class="text-sm font-medium text-slate-300 hover:text-accent transition">Služby</a>
+                <a href="#o-nas" class="text-sm font-medium text-slate-300 hover:text-accent transition">O nás</a>
+                <a href="#kontakt" class="bg-accent text-dark px-6 py-2.5 rounded-full text-sm font-bold hover:bg-white transition shadow-[0_0_15px_rgba(45,212,191,0.3)] hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transform hover:-translate-y-0.5">
+                    Kontaktovať
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- NOVÁ HERO SEKCIA -->
+<header class="hero-section flex items-center relative">
+    <!-- Pozadie -->
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Obsah -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Textová časť -->
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    <span class="text-accent text-xs font-bold tracking-wider uppercase">Prešov • Vranov nad Topľou</span>
+                </div>
+
+                <h1 class="font-heading text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Presné merania <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-teal-500">modernou technikou</span>
+                </h1>
+
+                <p class="text-lg text-slate-300 mb-10 max-w-lg font-light leading-relaxed border-l-2 border-accent pl-6">
+                    Komplexné geodetické a kartografické služby. Od vytyčovania hraníc až po inžiniersku geodéziu s dôrazom na detail.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#kontakt" class="btn-glow bg-accent text-dark px-8 py-4 rounded-full font-bold transition transform hover:-translate-y-1 text-center">
+                        Mám záujem o služby
+                    </a>
+                    <a href="#sluzby" class="px-8 py-4 rounded-full font-semibold text-white border border-white/20 hover:bg-white/10 transition text-center backdrop-blur-sm">
+                        Zistiť viac
+                    </a>
+                </div>
+            </div>
+
+            <!-- Vizuálny prvok / Štatistika (iba na veľkých obrazovkách) -->
+            <div class="hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                <!-- Sklo efekt karta -->
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl max-w-sm ml-auto transform rotate-2 hover:rotate-0 transition duration-500">
+                    <div class="flex items-center justify-between mb-6 pb-6 border-b border-white/10">
+                        <div>
+                            <p class="text-slate-400 text-xs uppercase tracking-wider">Dostupnosť</p>
+                            <p class="text-white font-bold">Celý Prešovský kraj</p>
+                        </div>
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 text-slate-200">
+                            <i class="fa-solid fa-check text-accent"></i> <span>Geometrické plány</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-200">
+                            <i class="fa-solid fa-check text-accent"></i> <span>Vytýčenie hraníc</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-200">
+                            <i class="fa-solid fa-check text-accent"></i> <span>Inžinierska geodézia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/30 hover:text-accent transition cursor-pointer">
+        <a href="#sluzby"><i class="fa-solid fa-arrow-down text-xl"></i></a>
+    </div>
+</header>
+
+<!-- Služby Sekcia -->
+<section id="sluzby" class="py-24 bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Čo ponúkame</span>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Portfólio služieb</h2>
+            <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Karta 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 group border-t-4 border-transparent hover:border-primary" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-file-pen"></i>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-dark mb-4">Kataster a Pozemky</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Geometrické plány</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Oddelenie a rozdelenie pozemkov</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Zriadenie vecného bremena</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Majetkoprávne vysporiadanie</li>
+                </ul>
+            </div>
+
+            <!-- Karta 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 group border-t-4 border-transparent hover:border-primary" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-hard-hat"></i>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-dark mb-4">Inžinierska Geodézia</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Vytyčovanie stavebných objektov</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Zameranie rozostavaných stavieb</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Porealizačné zameranie (ku kolaudácii)</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Kontrola rovinnosti a zvislosti</li>
+                </ul>
+            </div>
+
+            <!-- Karta 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 group border-t-4 border-transparent hover:border-primary" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-map"></i>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-dark mb-4">Mapovanie a Siete</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Polohopisné a výškopisné plány</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Zameranie inžinierskych sietí</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Pozdĺžne a priečne profily</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-2"></i> Poradenstvo v katastri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- O firme / Medzisekcia -->
+<section id="o-nas" class="py-20 bg-dark relative overflow-hidden">
+    <!-- Dekoratívny element -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 transform -skew-x-12 translate-x-20"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-white" data-aos="fade-right">
+                <h2 class="font-heading text-3xl font-bold mb-6">Rýchlosť, presnosť, profesionalita</h2>
+                <div class="space-y-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-white/10 text-accent border border-white/10">
+                                <i class="fa-solid fa-stopwatch text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="text-lg font-bold text-white">Dodržiavanie termínov</h4>
+                            <p class="mt-2 text-slate-400 text-sm leading-relaxed">Chápeme, že na stavbe čas znamená peniaze. Termíny sú pre nás záväzné a vždy sa snažíme prispôsobiť vašim požiadavkám.</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-white/10 text-accent border border-white/10">
+                                <i class="fa-solid fa-satellite-dish text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="text-lg font-bold text-white">Moderné technológie</h4>
+                            <p class="mt-2 text-slate-400 text-sm leading-relaxed">Využívame najmodernejšie GNSS prijímače a totálne stanice, ktoré zaručujú milimetrovú presnosť merania aj v náročnom teréne.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-dark font-bold mr-4"><i class="fa-solid fa-file-invoice"></i></div>
+                        <h3 class="text-white font-bold text-xl">Fakturačné údaje</h3>
+                    </div>
+
+                    <p class="text-white font-medium text-lg mb-1">Peter Petrík - Geodetické práce</p>
+                    <p class="text-slate-400 text-sm mb-6">Davidov č. 252, 093 03</p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+                        <div>
+                            <span class="block text-accent text-xs font-bold uppercase tracking-wider mb-1">IČO</span>
+                            <span class="text-white font-mono text-lg">44 199 236</span>
+                        </div>
+                        <div>
+                            <span class="block text-accent text-xs font-bold uppercase tracking-wider mb-1">DIČ</span>
+                            <span class="text-white font-mono text-lg">1080005091</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kontakt Sekcia -->
+<section id="kontakt" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+            <!-- Kontaktné informácie -->
+            <div data-aos="fade-right">
+                <span class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">Kde nás nájdete</span>
+                <h2 class="font-heading text-4xl font-bold text-dark mb-6">Kontaktujte nás</h2>
+                <p class="text-slate-500 mb-10 text-lg">Sme tu pre vás v Prešove, Vranove a širokom okolí. Neváhajte nás kontaktovať pre nezáväznú cenovú ponuku.</p>
+
+                <div class="space-y-6">
+                    <!-- Sídlo (Klikateľné) -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Davidov%20252%2C%2009303" target="_blank" rel="noopener noreferrer" class="block group">
+                        <div class="flex items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 transition group-hover:border-primary/30 group-hover:shadow-lg relative">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary text-xl shadow-sm shrink-0">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <div class="ml-6">
+                                <p class="text-xs font-bold text-primary uppercase tracking-wide mb-1">Sídlo firmy</p>
+                                <p class="text-dark font-bold text-lg">Davidov č. 252</p>
+                                <p class="text-slate-500">093 03, okr. Vranov n/T</p>
+                            </div>
+                            <div class="absolute top-4 right-4 text-slate-300 opacity-0 group-hover:opacity-100 transition duration-300 transform -translate-x-2 group-hover:translate-x-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Kancelária (Klikateľné) -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Námestie%20Slobody%205%2C%20Vranov%20nad%20Topľou" target="_blank" rel="noopener noreferrer" class="block group">
+                        <div class="flex items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 transition group-hover:border-primary/30 group-hover:shadow-lg relative">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary text-xl shadow-sm shrink-0">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="ml-6">
+                                <p class="text-xs font-bold text-primary uppercase tracking-wide mb-1">Kancelária</p>
+                                <p class="text-dark font-bold text-lg">Námestie Slobody 5 (AOC)</p>
+                                <p class="text-slate-500">093 01 Vranov nad Topľou</p>
+                            </div>
+                            <div class="absolute top-4 right-4 text-slate-300 opacity-0 group-hover:opacity-100 transition duration-300 transform -translate-x-2 group-hover:translate-x-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- CTA Tlačidlá -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                    <a href="tel:+421908137409" class="flex-1 flex items-center justify-center px-6 py-4 bg-dark text-white rounded-xl font-bold hover:bg-primary transition shadow-lg hover:shadow-primary/40">
+                        <i class="fa-solid fa-phone mr-3"></i> 0908 137 409
+                    </a>
+                    <a href="mailto:peterpetrik@geodetvranov.sk" class="flex-1 flex items-center justify-center px-6 py-4 border-2 border-slate-200 text-dark rounded-xl font-bold hover:border-primary hover:text-primary transition">
+                        <i class="fa-solid fa-envelope mr-3"></i> Poslať email
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kontaktný formulár -->
+            <div class="bg-white p-8 lg:p-10 rounded-3xl shadow-2xl border border-slate-100 relative" data-aos="fade-left">
+                <!-- Dekoratívny kruh -->
+                <div class="absolute -top-4 -right-4 w-20 h-20 bg-accent/20 rounded-full blur-xl"></div>
+
+                <h3 class="text-2xl font-bold text-dark mb-8">Napíšte nám správu</h3>
+                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Meno</label>
+                            <input name="name" type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-dark" placeholder="Ján Novák">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Telefón</label>
+                            <input name="phone" type="tel" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-dark" placeholder="09xx ...">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Email</label>
+                        <input name="email" type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-dark" placeholder="vas@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Správa</label>
+                        <textarea name="message" rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-dark" placeholder="Dobrý deň, potreboval by som zamerať..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-teal-500 text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-primary/40 transform hover:-translate-y-0.5 transition duration-300">
+                        Odoslať nezáväzne
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="font-heading text-2xl font-bold text-white mb-4">GEODET<span class="text-accent">PREŠOV</span></p>
+        <p class="text-sm mb-8 max-w-md mx-auto leading-relaxed">Profesionálne geodetické služby vo Vranove nad Topľou a celom Prešovskom kraji. Spoliehajte sa na kvalitu a presnosť.</p>
+
+        <!-- Sociálne siete (voliteľné) -->
+        <div class="flex justify-center space-x-8 text-2xl mb-8">
+            <a href="#" class="text-slate-500 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="text-slate-500 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-slate-500 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600">
+            <p>&copy; 2025 Peter Petrík. Všetky práva vyhradené.</p>
+            <p class="mt-2 md:mt-0">Design & Code by <span class="text-slate-500">AI Assistant</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- AOS Init Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800,
+        easing: 'ease-out-cubic',
+    });
+</script>
+</body>
+</html>
